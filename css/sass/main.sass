@@ -1,0 +1,431 @@
+@import "bourbon/bourbon"
+
+html
+  scroll-behavior: smooth
+
+body
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	font-family: "Raleway", sans-serif
+	font-weight: normal
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.42857
+	-webkit-font-smoothing: antialised
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+.hidden
+	display: none
+
+p
+	margin: 0
+	padding: 0
+
+ul, li
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+section,
+.main__head
+	position: relative
+
+section
+	width: 100%
+	min-height: 100vh
+	padding-top: 40px
+	z-index: 100
+	h3
+		text-align: center
+		text-transform: uppercase
+		font-weight: 700
+	.sec-title
+		margin: 0
+		margin-bottom: 10px
+		text-align: center
+		text-transform: uppercase
+		font-size: 2rem
+	.sec-description
+		margin-bottom: 120px
+		text-align: center
+		text-transform: uppercase
+		font-size: 1.2rem
+		font-weight: 700
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			top: 70px
+			left: 50%
+			transform: translateX(-50%)
+			width: 200px
+			height: 2px
+	.sec-content
+		.person
+			text-align: center
+		.brief
+			margin-bottom: 60px
+			p
+				text-align: right
+		.col-title
+			margin-bottom: 40px
+		.name
+			font-size: 22px
+			text-transform: uppercase
+			text-align: left
+		p
+			margin: 0
+			padding: 0
+			margin-bottom: 20px
+		li
+			margin-bottom: 10px
+		.wp-post-image
+			width: 240px
+			height: 240px
+			margin-bottom: 40px
+			border-radius: 50%
+			object-fit: cover
+			object-position: 50% 25%
+			box-shadow: #888 0 0 40px
+
+.main__head
+	min-height: 620px
+	padding-top: 20px
+
+.loader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	background: none repeat scroll 0 0 #ffffff
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/preloader.gif")
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+.logo
+	float: left
+	position: fixed
+	top: 20px
+	left: 30px
+	z-index: 200
+	svg
+		height: 60px
+		width: 60px
+		position: relative
+
+.menu
+	width: 60px
+	height: 60px
+	float: right
+	position: fixed
+	top: 20px
+	right: 30px
+	z-index: 200
+	border: none
+	border-radius: 4px
+	span
+		display: block
+
+$width: 40px
+$height: 4px
+
+.sandwich 
+  width: $width
+  height: $width
+  margin: auto
+
+.sw-topper 
+	position: relative
+	width: $width
+	height: $height
+	top: $height
+	background: #fff
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+
+.sw-bottom 
+	position: relative
+	width: $width
+	height: $height
+	top: $height * 3.75
+	background: #fff
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+
+.sw-footer 
+	position: relative
+	width: $width
+	height: $height
+	background: #fff
+	top: $height * 6.5
+	background: #fff
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+
+.sandwich.active
+	margin: 10px auto
+	.sw-topper 
+		top: $height * 4
+		transform: rotate(45deg)
+	.sw-bottom 
+		top: $height * 3
+		transform: rotate(-45deg)
+	.sw-footer 
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+.menu__top
+	position: fixed
+	top: 0
+	right: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, .9)
+	z-index: 150
+	display: none
+	ul
+		padding: 0
+		margin: 0
+		margin-top: 120px
+		list-style-type: none
+		text-align: center
+		a
+			padding: 20px 0
+			display: block
+			text-decoration: none
+			text-transform: uppercase
+			color: #ffffff
+			transition: all 0.5s
+
+.top-wrapper
+	position: absolute
+	top: 0
+	left: 0
+	display: table
+	width: 100%
+	height: 50em
+	z-index: 100
+	.top-description
+		display: table-row
+		.top-centered
+			display: table-cell
+			text-align: center
+			vertical-align: middle
+			.top-title
+				display: inline-block
+				h1
+					display: inline-block
+					padding: 20px 30px
+					font-size: 2.5rem
+					border: 6px solid #ffffff
+					box-shadow: rgba(0, 0, 0, .25) 0 0 10em 10em
+				p
+					margin: 0
+					font-size: 1.3rem
+
+.personal
+	padding-bottom: 30px
+	.sec-content
+		h3
+			font-size: 1.4rem
+		.icon
+			margin: 0 1rem
+			margin-bottom: 1rem
+			font-size: 4rem
+		.left
+			text-align: right
+			h3
+				text-align: right
+			.profession
+				margin-left: 1rem
+		.right
+			text-align: left
+			h3
+				text-align: left
+			.profession
+				margin-right: 1rem
+
+		.item-wrapper
+			.date
+				display: inline-block
+				padding: 0.2rem 1rem
+				margin: 20px 0 10px
+				font-size: 1rem
+				border-radius: 4px
+			.description
+				margin: 1rem 0
+				.profession
+					font-size: 1.2rem
+					font-weight: 600
+					text-transform: uppercase
+
+.socials
+	margin-top: 30px
+	ul
+		display: flex
+	i
+		font-size: 24px
+		margin-right: 20px
+
+.footer
+	z-index: 500
+	height: 100px
+	padding: 0 20px
+	display: flex
+	align-items: center
+	justify-content: space-around
+	.socials
+		margin: 0
+
+.portfolio
+	padding-bottom: 4rem
+	ul
+		margin-bottom: 1.5rem
+		display: flex
+		align-items: center
+		justify-content: center
+	li
+		margin: 0 10px
+		text-transform: uppercase
+		font-size: 12px
+		line-height: 200%
+		cursor: pointer
+
+.portfolio__item
+	position: relative
+	padding: 0
+	img
+		width: 100%
+		height: auto
+	.portfolio__item-content
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba(0, 0, 0, .8)
+		text-align: center
+		opacity: 0
+		transition: all .6s
+	&:hover .portfolio__item-content
+		opacity: 1
+		padding-top: 10%
+		height: 85%
+		a
+			padding: 8px 16px
+			background-color: transparent
+			border: 1px solid #fff
+			border-radius: 6px
+			cursor: pointer
+			font-size: 1rem
+			text-decoration: none
+		p
+			padding: 0 5px !important
+
+.overflow
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	background: rgba(0, 0, 0, .8)
+	z-index: 200
+	.portfolio__description
+		h3
+			font-size: 3rem
+			text-transform: uppercase
+			text-align: center
+			margin-top: 4rem
+			margin-bottom: 0
+		.portfolio__description-wrapper
+			display: flex
+			justify-content: space-between
+			padding: 2rem
+			p
+				width: 50%
+				margin-right: 1.5rem
+				font-size: 1.2rem
+				line-height: 150%
+				text-align: right
+			img
+				width: 50%
+				height: auto
+
+.contacts
+	.left
+		padding-right: 20px
+	.right
+		padding-left: 20px
+	.contact__wrapper
+		margin-bottom: 30px
+		text-align: right
+		i
+			font-size: 32px
+		h3
+			text-align: right
+		p
+			margin-top: 8px
+		a
+			text-decoration: none
+
+.contact__form
+	display: flex
+	flex-direction: column
+	label
+		font-size: 1rem
+		font-weight: 500
+	input,
+	textarea
+		margin-bottom: 20px
+		padding: 16px 6px
+		font-size: 1rem
+		border-radius: 4px
+	button
+		width: 25%
+		margin: auto
+		padding: 6px 16px
+		font-size: 1.2rem
+		background: none
+		border-radius: 6px
+
+
+// parallax
+.parallax
+	width: 120%
+	height: 120%
+	position: fixed 
+	top: -10px 
+	left: -10px 
+	overflow: hidden 
+	z-index: 1
+	.parallax-bg
+		width: 100%
+		position: absolute 
+		top: 0px 
+		left: 0px 
